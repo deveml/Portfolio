@@ -7,7 +7,7 @@ const jestConfig: JestConfigWithTsJest = {
   },
   moduleNameMapper: {
     "^.+\\.svg$": "jest-svg-transformer",
-    "^.+\\.css$": "jest-transform-css",
+    "\\.(css|less)$": "identity-obj-proxy",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "json"],
 };
