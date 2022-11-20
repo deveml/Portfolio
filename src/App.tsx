@@ -1,7 +1,5 @@
-import { FlexBox } from "./components/common/FlexBox";
-
 function App() {
-  return <FlexBox flexDirection="column">Some content</FlexBox>;
+  return <>Sample app</>;
 }
 
 export default App;
