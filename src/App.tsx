@@ -1,33 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import { StyledEngineProvider, ThemeProvider, Typography } from "@mui/material";
+import { lazy, Suspense } from "react";
+import { FallBack } from "./components/Fallback";
+import { appTheme } from "./theme/theme";
+
+/**
+ * @description Lazy loading fonts so that the render will not be blocked
+ */
+const LazyFontLoader = lazy(() => import("./theme/FontLoader"));
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Suspense fallback={<FallBack />}>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={appTheme}>
+          <Typography>Sample app</Typography>
+          <LazyFontLoader />
+        </ThemeProvider>
+      </StyledEngineProvider>
+    </Suspense>
   );
 }
 

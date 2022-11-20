@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "vite-react-component-boilerplate",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -9,12 +9,19 @@
     "preview": "vite preview",
     "git-cz": "npx git-cz",
     "test": "jest",
+    "lint": "eslint --fix",
+    "tsc": "npx tsc",
+    "test:debug": "jest --watch-all",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
@@ -29,6 +36,7 @@
     "@types/jest": "^29.2.3",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "@types/react-helmet": "^6.1.5",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
@@ -38,9 +46,9 @@
     "eslint-plugin-react": "^7.31.11",
     "git-cz": "^4.9.0",
     "husky": "^8.0.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^29.3.1",
     "jest-svg-transformer": "^1.0.0",
-    "jest-transform-css": "^6.0.0",
     "react-test-renderer": "^18.2.0",
     "storybook": "^7.0.0-alpha.51",
     "ts-jest": "^29.0.3",
